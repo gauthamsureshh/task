@@ -12,7 +12,7 @@
             </div>
         @endif
     </div>
-    <form method="POST" >
+    <form method="POST" action="{{route('invoice.post')}}">
         @csrf
         @method('post')
         <div class="row">
@@ -20,25 +20,25 @@
                 <h1 class="text-center">Generate Invoice</h1>
                 <div class="form-group">
                     <label>Customer:</label>
-                    <select class="form-control" name="customer_id" required>
+                    <select class="form-control" name="customer_id" >
                         <option value="" disabled selected >Select Customer</option>
-                        {{-- @foreach($customer as $customer)
+                        @foreach($customer as $customer)
                             <option value="{{ $customer->id }}">{{ $customer->name }}</option>
-                        @endforeach --}}
+                        @endforeach
                     </select>
                 </div>
                 <div class="form-group">
                     <label>Item:</label>
-                    <select class="form-control" name="customer_id" required>
+                    <select class="form-control" name="task_id" >
                         <option value="" disabled selected >Select Task</option>
-                        {{-- @foreach($customer as $customer)
-                            <option value="{{ $customer->id }}">{{ $customer->name }}</option>
-                        @endforeach --}}
+                        @foreach($tasks as $task)
+                            <option value="{{ $task->id }}">{{ $task->description }}</option>
+                        @endforeach
                     </select>
                 </div>
                 <div class="form-group">
                     <a href="{{route('invoicelist')}}" class="btn btn-info"><img src="https://cdn-icons-png.flaticon.com/512/709/709624.png" height="20px"></a>
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <button type="submit" class="btn btn-secondary">Generate</button>
                 </div>
             </div>
         </div>

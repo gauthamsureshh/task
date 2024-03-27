@@ -23,7 +23,7 @@
       </ul>
       <span class="navbar-text">
         @auth
-          <p>Welcome, {{auth()->user()->name}}</p>
+          <p>Welcome, <a href="{{route('useredit',['user'=>auth()->user()->id])}}">{{auth()->user()->name}}</a></p>
         @else
           <p>Welcome, Guest</p>
         @endauth

@@ -29,9 +29,9 @@ class PageController extends Controller
 
         $cred=$request->only('email','password');
         if(Auth::attempt($cred)){
+            toastr()->success('Welcome Back!');
             return redirect(route('homepage'));
         }
-        toastr()->error('hello');
         return redirect(route('loginpage'))->with('errors',"Invalid Credentials");
     }
 
@@ -57,12 +57,29 @@ class PageController extends Controller
         if(!$user){
             return redirect(route('registerpage'))->with('errors',"Registration Failed, try again");
         }
+        toastr()->success('Account Registered');
         return redirect(route('loginpage'));
+    }
+
+    #fn to render Profile Edition Page
+    public function userEdit(){
+        return view('Auth.edit');
+    }
+
+    #fn to edit the user profile
+    public function userUpdate(Request $request){
+        $user = Auth::user();
+        $user->email = $request->email;
+        $user->save();
+        toastr()->success('Profile Updatted');
+        return redirect(route('homepage'));
+    
     }
 
     public function logout(){
         Session()->flush();
         Auth::logout();
+        toastr()->error('Logged Out');
         return redirect(route('homepage'));
     }
 }

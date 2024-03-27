@@ -38,11 +38,11 @@
                         <td>{{$task->duedate}}</td>
                         <td>
                             <div class="d-flex align-items-center">
-                                <a href="{{route('task.edit',['task'=>$task])}}" class="mr-2"><img src="https://cdn-icons-png.flaticon.com/512/8188/8188338.png" height="28px"></a>
+                                <a href="{{route('task.edit',['task'=>$task])}}" class="mr-2"><img src="https://cdn-icons-png.flaticon.com/512/7257/7257795.png" height="28px"></a>
                                 <form method="post" action="{{route('taskdelete',['task'=>$task])}}">
                                     @csrf
                                     @method('delete')
-                                    <button type="submit" value="delete" class="btn btn-sm"><img src="https://cdn-icons-png.flaticon.com/512/748/748138.png" height="20px"></button>
+                                    <button type="submit" value="delete" class="btn btn-sm"><img src="https://cdn-icons-png.flaticon.com/512/3286/3286176.png" height="28px"></button>
                                 </form>
                             </div>
                         </td>

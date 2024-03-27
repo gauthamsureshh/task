@@ -14,6 +14,8 @@ Route::post('/login',[PageController::class,'logIn'])->name('login.post');
 Route::get('/register', [PageController::class,'registerPage'])->name('registerpage');
 Route::post('/register', [PageController::class,'register'])->name('register.post');
 Route::get('/logout', [PageController::class,'logout'])->name('logout');
+Route::get('/user/edit/{user}',[PageController::class,'userEdit'])->name('useredit');
+Route::put('/user/edit/{user}',[PageController::class,'userUpdate'])->name('userupdate.put');
 
 #routes for CRUD operations on Customer
 Route::get('/customer/list',[CustomerController::class,'customerList'])->name('customerlist');
@@ -34,3 +36,8 @@ Route::delete('/task/delete/{task}',[TaskController::class,'taskDestroy'])->name
 #routes for CRUD operations on Invoice
 Route::get('/invoice/list',[InvoiceController::class,'invoiceList'])->name('invoicelist');
 Route::get('/invoice/create',[InvoiceController::class,'invoiceCreate'])->name('invoicecreate');
+Route::post('/invoice',[InvoiceController::class,'invoiceStore'])->name('invoice.post');
+Route::get('/invoice/edit/{invoice}',[InvoiceController::class,'invoiceEdit'])->name('invoice.edit');
+Route::put('/invoice/edit/{invoice}',[InvoiceController::class,'invoiceUpdate'])->name('invoice.put');
+Route::delete('/invoice/delete/{invoice}',[InvoiceController::class,'invoiceDestroy'])->name('invoicedelete');
+Route::get('/invoice/{invoice}',[InvoiceController::class,'invoiceShow'])->name('invoiceshow');

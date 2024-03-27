@@ -13,10 +13,10 @@ return new class extends Migration
     {
         Schema::create('tasks', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('customer_id')->references('id')->on('customers')->onDelete('set null');
+            $table->foreignId('customer_id')->constrained()->onDelete('restrict');
             $table->text('description');
             $table->decimal('price');
-            $table->string('assign');
+            $table->foreignId('assign')->constrained('users');
             $table->string('priority');
             $table->string('status');
             $table->string('duedate');
