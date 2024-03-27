@@ -1,18 +1,18 @@
 @extends('Layouts.main')
 
-@section('title','Customer Management')
+@section('title','Invoice Management')
 @section('content')
 <div class="container-fluid">
     <div class="row">
         <div class="col-12">
-            <h1 class="text-center my-4">Customer Management</h1>
+            <h1 class="text-center my-4">Invoice Management</h1>
         </div>
     </div>
     <div class="row">
         <div class="col">
             <a href="{{route('homepage')}}" class="btn btn-info mb-2"><img src="https://cdn-icons-png.flaticon.com/512/709/709624.png" height="20px"></a>
-            <a href="{{route('customercreate')}}" class="btn btn-success mb-2">Add Customer <img src="https://cdn-icons-png.flaticon.com/512/8861/8861125.png" height="20px"></a>
-                <table class="table table-hover" border="1">
+            <a href="{{route('invoicecreate')}}" class="btn btn-success mb-2">Generate Invoice <img src="https://cdn-icons-png.flaticon.com/512/8861/8861125.png" height="20px"></a>
+                {{-- <table class="table table-hover" border="1">
                     <thead class="thead-dark">
                     <tr>
                         <th>Name</th>
@@ -44,7 +44,7 @@
                     </tr>
                     @endforeach
                     </tbody>
-                </table>  
+                </table>   --}}
         </div>
     </div>
 </div>

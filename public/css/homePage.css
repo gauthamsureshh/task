@@ -13,6 +13,7 @@
     padding: 50px;
     background-color: rgba(193, 185, 185, 0.204);
     border-radius: 20px;
+    width: 700px;
 }
 
 h1{
@@ -24,6 +25,6 @@ h1{
 body{
     overflow: hidden;
 }
-h6{
+h5{
     color: rgba(127, 255, 212, 0.461);
 }

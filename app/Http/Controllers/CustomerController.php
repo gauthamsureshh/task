@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class CustomerController extends Controller
 {
-    #fn to list all the customer in db
+    #fn to list all the customers in db
     public function customerList(){
         $customers=Customer::all();
         return view('Customer.list',['customer'=>$customers]);
@@ -18,7 +18,7 @@ class CustomerController extends Controller
         return view('Customer.create');
     }
 
-    #fn to store the new customer details in db
+    #fn to store  new customer details in db
     public function customerStore(Request $request)
     {
         $data=$request->validate([
@@ -55,7 +55,7 @@ class CustomerController extends Controller
         return redirect(route('customerlist'));
     }
 
-    #fn to delete existiing customer
+    #fn to delete existing customer
     public function customerDestroy(Customer $customer){
         $customer->delete();
         toastr()->warning('Customer Deleted');

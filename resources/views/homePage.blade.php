@@ -9,11 +9,11 @@
         @auth
         <div class="buttons">
             <a class="btn btn-outline-primary" href="{{route('customerlist')}}">Customer Management</a>
-            <a class="btn btn-outline-success" href="#">Task Management</a>
-            <a class="btn btn-outline-warning" href="#">Invoice Management</a>
+            <a class="btn btn-outline-success" href="{{route('tasklist')}}">Task Management</a>
+            <a class="btn btn-outline-warning" href="{{route('invoicelist')}}">Invoice Management</a>
         </div>
         @else
-            <h6>Let's Get Started,<a href="{{route('loginpage')}}">Login</a></h6>
+            <h5 style="text-align: center">Let's Get Started,<a href="{{route('loginpage')}}">Login</a></h5>
         @endauth
         
     </div>
